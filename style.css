@@ -40,6 +40,7 @@
 body{
   margin: 0px;
   padding: 0px;
+
 }
 h1{
   font-size:96px;
@@ -181,8 +182,64 @@ border-radius: 50px;
   top:30px;
 }
 
+/*Blocks*/
+.flexDiv{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content:center ;
+  align-content: center;
+  box-sizing: border-box;
+  padding: 100px 0px;
+  overflow: hidden;
+}
+.block-about{
+
+}
+.about-us{
+  width:50%;
+  text-align: center;
+  box-sizing: border-box;
+  padding:50px 0px ;
+}
+.block-about img:first-child{
+  box-shadow:0px 0px 50px grey;
+}
+.about-us hr+p{
+  font-weight: bold;
+}
+.imgPos{
+  position: relative;
+}
+.square{
+  position: absolute;
+  top:-40px;
+  left:100px;
+}
+.square-two{
+  position: absolute;
+  top:0px;
+  left:-90px;
+}
+.shef-block>p{
+  position:absolute;
+  top:5%;
+  left:46%;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+}
+
+/*shef-block*/
+.shef-block{
+  background-image: url("img/specialty's-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color:white;
+  position: relative;
+}
 
 
+/*media */
 @media (max-width:923px){
   .data{
     transform: rotate(-360deg);

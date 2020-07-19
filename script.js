@@ -26,3 +26,5 @@ let showMen =()=>{
   idMenWin.classList.toggle('d-none');
 }
 idMenImg.addEventListener('click',showMen);
+
+/*blocks*/
