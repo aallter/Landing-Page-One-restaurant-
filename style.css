@@ -263,7 +263,7 @@ border-radius: 50px;
 
 /*block a table*/
 /*Form*/
-.flexDiv input:not(:last-child){
+.form-style input:not(:last-child){
   width: 45%;
   height: 60px;
   background: #E5E5E5;
@@ -324,6 +324,7 @@ border-radius: 50px;
 .block-menu-rest p{
   padding: 10px 50px;
   width:100%;
+  font-weight: bold;
 }
 .li-menu-rest{
   cursor: pointer;
@@ -390,6 +391,74 @@ text-transform: uppercase;
 
 z-index: 999;
 }
+
+/*four img 25%*/
+.four-img{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.four-img img{
+  width:25%;
+}
+
+/*Contact form*/
+.form-style-contact input:not(:last-child){
+  width: 33%;
+  height: 60px;
+  background: #E5E5E5;
+  border-radius: 5px;
+  border:none;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.form-style-contact input:last-child{
+  width: 100%;
+}
+textarea{
+background: #E5E5E5;
+border-radius: 5px;
+border:none;
+box-sizing: border-box;
+padding: 10px;
+margin: 10px 0px;
+height: 120px;
+}
+/*footer*/
+
+.footer{
+  text-align: center;
+  box-sizing: border-box;
+  padding:30px 0px;
+  background: rgba(0, 0, 0, 0.9);
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: normal;
+  font-size: 12px;
+}
+
+/*Mini cotacts*/
+.mini-contacts {
+  width: 100%;
+}
+.mini-contacts ul{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: center;
+  width: 100%;
+  margin-top: 20px;
+  padding-left: 0px;
+}
+.mini-contacts ul li{
+  font-weight: bold;
+  font-size: 10px;
+  color:silver;
+}
+
+
+
+
+
 /*media */
 @media (max-width:923px){
   .data{
@@ -430,28 +499,13 @@ z-index: 999;
     top:95%;
     color:white;
   }
-}
-
-/*four img 25%*/
-.four-img{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-.four-img img{
-  width:25%;
-}
-
-/*footer*/
-
-.footer{
-  text-align: center;
-  box-sizing: border-box;
-  padding:30px 0px;
-  background: rgba(0, 0, 0, 0.9);
-  color: rgba(255, 255, 255, 0.5);
-  font-weight: normal;
-font-size: 12px;
+  .form-style-contact input:not(:last-child){
+    margin-top: 10px ;
+    width: 100%;
+  }
+  .form-style-contact input:last-child{
+    width: 100%;
+  }
 }
 @media (max-height:600px){
   header{
@@ -464,8 +518,8 @@ font-size: 12px;
 }
 
 @media (max-width:600px){
-  .square,.square-two{
-    display: none;
+  .square,.square-two,.square-three{
+    display: none !important;
   }
   .four-img img{
     width:50%;
