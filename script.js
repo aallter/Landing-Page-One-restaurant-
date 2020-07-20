@@ -31,15 +31,6 @@ idMenImg.addEventListener('click',showMen);
 
 let getButtSlide = document.querySelectorAll('.one-butt-slide');
 let btn_slide = document.getElementById('btn-slide-block');
-let buttWithActive = document.querySelector('.slide-butt-active');
-
-// btn_slide.addEventListener('click', function(event) {
-//   var index = getButtSlide.indexOf(event.target);
-//
-//    if (~index) {
-//        return console.log(index);
-//    }
-// });
 
 getButtSlide.forEach(function(but, i) {
     but.addEventListener("click", function() {
@@ -48,28 +39,42 @@ getButtSlide.forEach(function(but, i) {
         buttWithActive.classList.remove('slide-butt-active');
         getButtSlide[i].classList.add('slide-butt-active');
 
-        /*let getBlockSlide = document.querySelector('#slide-id .flexDiv');
-        getBlockSlide.classList.add('d-none');
-        getBlockSlide = document.querySelectorAll('#slide-id .flexDiv.d-none');
-        getBlockSlide[i].classList.remove('d-none');
-
-        Почему-то эта часть кода работала неправильно и в 3 часа ночи я решил пойти по не такому умному решению , а по противоположному решению такому как код который ниже
-        */
+      /*Edit content*/
         let getBlockSlide = document.querySelectorAll('#slide-id .flexDiv');
-        if(i == 0){
-          getBlockSlide[0].classList.remove('d-none');
-          getBlockSlide[1].classList.add('d-none');
-          getBlockSlide[2].classList.add('d-none');
-        }else if(i==1){
-          getBlockSlide[0].classList.add('d-none');
-          getBlockSlide[1].classList.remove('d-none');
-          getBlockSlide[2].classList.add('d-none');
-        }else if(i == 2){
-          getBlockSlide[0].classList.add('d-none');
-          getBlockSlide[1].classList.add('d-none');
-          getBlockSlide[2].classList.remove('d-none');
-        }else{
-          alert('oops');
-        }
+            for(let j=0;j<getBlockSlide.length;j++){
+              if(!getBlockSlide[j].classList.contains('d-none') && getBlockSlide[j].classList.contains('my-d-block') ){
+                  getBlockSlide[j].classList.remove('my-d-block');
+                  getBlockSlide[j].classList.add('d-none');
+              }
+            }
+        /*add class d-block next slide*/
+            getBlockSlide[i].classList.remove('d-none');
+            getBlockSlide[i].classList.add('my-d-block');
     });
 });
+
+/*SLIDE MENU RESTAURANT*/
+
+let getCategoriyMenu = document.querySelectorAll('.li-menu-rest');
+let getImgMenu = document.querySelectorAll('#img-menu img');
+
+let arr_cat_men=[];
+
+for (let i = 0; i < getCategoriyMenu.length; i++) {
+    arr_cat_men.push(getCategoriyMenu[i]);
+/*get index categori*/
+    getCategoriyMenu[i].addEventListener('click', function(e){
+    let ind = (arr_cat_men.indexOf(e.target));
+    console.log(ind);
+/*delete d-block back slide*/
+    for(let j=0;j<getImgMenu.length;j++){
+      if(!getImgMenu[j].classList.contains('d-none') && getImgMenu[j].classList.contains('my-d-block') ){
+          getImgMenu[j].classList.remove('my-d-block');
+          getImgMenu[j].classList.add('d-none');
+      }
+    }
+/*add class d-block next slide*/
+    getImgMenu[ind].classList.remove('d-none');
+    getImgMenu[ind].classList.add('my-d-block');
+ });
+}
