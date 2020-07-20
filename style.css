@@ -236,18 +236,17 @@ border-radius: 50px;
 .shef-block>p{
   position:absolute;
   top:5%;
-  left:46%;
   text-transform: uppercase;
   letter-spacing: 0.5em;
 }
-.pInp>.imgPos+p{
+.absolute-p-time{
   position:absolute;
   top:90%;
   font-weight:bold;
   text-align: center;
   text-transform: uppercase;
   font-size: 12px;
-  color: rgba(51, 51, 51, 0.5);
+  color:white;
 }
 
 /*shef-block*/
@@ -342,6 +341,55 @@ border-radius: 50px;
   box-sizing: border-box;
   padding-right:20px ;
 }
+.pInp>.imgPos+p{
+  top:95%;
+  color:grey;
+}
+/*two picture*/
+#two-picture{
+    background-image: url("img/specialty's-bgkj.png");
+}
+/*#two-picture p .absolute-p-time{
+  left:%;
+}*/
+.black-div-on-img{
+width: 84%;
+height: 80px;
+background: #000000;
+transform: rotate(90deg);
+
+position: absolute;
+top:43%;
+left:43%;
+font-family: 'Fondamento', cursive;
+font-size: 24px;
+line-height: 12px;
+
+box-sizing: border-box;
+padding: 30px 20px;
+text-transform: uppercase;
+
+z-index: 999;
+}
+.black-div-two-img{
+width: 84%;
+height: 80px;
+background: #000000;
+transform: rotate(-90deg);
+
+position: absolute;
+top:43%;
+left:-27%;
+font-family: 'Fondamento', cursive;
+font-size: 24px;
+line-height: 12px;
+
+box-sizing: border-box;
+padding: 30px 20px;
+text-transform: uppercase;
+
+z-index: 999;
+}
 /*media */
 @media (max-width:923px){
   .data{
@@ -378,8 +426,33 @@ border-radius: 50px;
   .pInp>.imgPos+p{
     top:95%;
   }
+  span.absolute-p-time{
+    top:95%;
+    color:white;
+  }
 }
 
+/*four img 25%*/
+.four-img{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.four-img img{
+  width:25%;
+}
+
+/*footer*/
+
+.footer{
+  text-align: center;
+  box-sizing: border-box;
+  padding:30px 0px;
+  background: rgba(0, 0, 0, 0.9);
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: normal;
+font-size: 12px;
+}
 @media (max-height:600px){
   header{
     background-image: url("img/header-bg.png");
@@ -394,6 +467,18 @@ border-radius: 50px;
   .square,.square-two{
     display: none;
   }
-  .about-us{
-    width:80%;
+  .four-img img{
+    width:50%;
   }
+  .about-us{
+    width:78%;
+  }
+  .black-div-two-img{
+  top:37.5%;
+  font-size: 20px;
+  }
+  .black-div-on-img{
+  top:37.5%;
+  left:37.5%;
+  }
+}
