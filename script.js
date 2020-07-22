@@ -96,25 +96,52 @@ for (let anchor of anchors) {
 }
 
 
-/*Send mail on email, not my script*/
 
-$(document).ready(function() {
+/*Validation form */
+let btn = document.querySelectorAll("form input.submit-button");
 
-	//E-mail Ajax Send
-	$("form").submit(function() { //Change
-		var th = $(this);
-		$.ajax({
-			type: "POST",
-			url: "mail.php", //Change
-			data: th.serialize()
-		}).done(function() {
-			alert("Thank you!");
-			setTimeout(function() {
-				// Done Functions
-				th.trigger("reset");
-			}, 1000);
-		});
-		return false;
-	});
+btn.forEach(item =>{
+  item.addEventListener('click',function(e){
+
+    let inputs = document.querySelectorAll('form input');
+
+    inputs.forEach(item => {
+    if(item.checkValidity()){
+      item.classList.remove('is-invalid');
+      item.classList.add('is-valid');
+      /*Send mail on email, not my script*/
+      $(document).ready(function() {
+
+      	//E-mail Ajax Send
+      	$("form").submit(function() { //Change
+      		var th = $(this);
+      		$.ajax({
+      			type: "POST",
+      			url: "mail.php", //Change
+      			data: th.serialize()
+      		}).done(function() {
+      			alert("Thank you!");
+      			setTimeout(function() {
+      				// Done Functions
+      				th.trigger("reset");
+      			}, 1000);
+      		});
+      		return false;
+      	});
+
+      });
+
+    }else{
+      item.classList.remove('is-valid');
+      item.classList.add('is-invalid');
+    }
+
+    });
+    let form = document.querySelector('form');
+
+    if(!form.checkValidity()){
+      e.preventDefault();
+    }
+  });
 
 });

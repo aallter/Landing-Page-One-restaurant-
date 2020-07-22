@@ -111,12 +111,12 @@
   		<input type="hidden" name="form_subject" value="Form Book a table"/>
   		<!-- END Hidden Required Fields -->
 
-      <input  name="name"  type="text" placeholder="Name" />
-      <input name="email" type="email" placeholder="Email" />
-      <input name="phone" type="text" placeholder="Phone" />
-      <input  name="date" type="date" placeholder="Date" />
-      <input  name="people" type="number" placeholder="People" />
-      <input name="time"  type="time" placeholder="Time" />
+      <input  required pattern="^[A-za-zА-Яа-я]{1,}\s[A-za-zА-Яа-я]{1,}\s[A-za-zА-Яа-я]{1,}$" name="name"  type="text" placeholder="Name" />
+      <input required pattern="^\S+@\S+\.\S+$" name="email" type="email" placeholder="Email" />
+      <input required pattern="^\+\d{12}$" name="phone" type="text" placeholder="Phone" />
+      <input  name="date" type="date" placeholder="Date"  required />
+      <input  name="people" type="number" placeholder="People" required />
+      <input name="time"  type="time" placeholder="Time"  required />
       <input  name="submit-but" type="submit" value="book now" class="submit-button" />
     </form>
   </div>
@@ -246,10 +246,10 @@
     <input type="hidden" name="form_subject" value="Form Contact Message"/>
     <!-- END Hidden Required Fields -->
 
-    <input name="name" type="text" placeholder="Name"/>
-    <input name="email" type="email" placeholder="Email"/>
-    <input name="phone" type="text" placeholder="Phone"/>
-    <textarea name="message" placeholder="Message" class="w-100"></textarea>
+    <input required pattern="^[A-za-zА-Яа-я]{1,}\s[A-za-zА-Яа-я]{1,}\s[A-za-zА-Яа-я]{1,}$" name="name" type="text" placeholder="Name"/>
+    <input required pattern="^\S+@\S+\.\S+$" name="email" type="email" placeholder="Email"/>
+    <input required pattern="^\+\d{12}$"  name="phone" type="text" placeholder="Phone"/>
+    <textarea required pattern="^[A-za-zА-Яа-я]$" name="message" placeholder="Message" class="w-100" ></textarea>
     <input type="submit" value="Send" class="submit-button" name="but-sub-conc"/>
   </form>
   <div class="mini-contacts">
