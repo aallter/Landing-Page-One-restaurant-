@@ -1,5 +1,4 @@
 # Landing-Page-One-restaurant-
-Верстка бесплатного макета на ресторанную тематику . Первая работа в портфолио.
 In this work, I took a free mockup to show my skills. The project used HTML / CSS3 (flex, position) / JS (min) / PHP (min).
 This is the first portfolio job of easy complexity.
 
